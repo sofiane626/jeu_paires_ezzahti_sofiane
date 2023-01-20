@@ -1,0 +1,124 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.game-page {
+    display: none;
+    transition: all 1s;
+    height: 95vh !important;
+    background: url(../video/video-02-heritage-de-poudlard-fond-decran-animated-wallpaper.webm) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    animation: background-video 60s linear infinite;
+}
+
+.start-page{
+    transition: all 1s;
+    background-color: black;
+    color: white;
+    height: 100vh !important;
+    width: 100%;
+    display: block;
+}
+
+@keyframes background-video {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.div-start{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div1{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div2{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-card{
+    width: 60%;
+    height: 95vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ligne1{
+    width: 95%;
+    height: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ligne2 {
+    width: 95%;
+    height: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cards {
+    height: 95%;
+    width: 170px;
+    transition: transform 0.5s;
+    background-image: url("../img/dos.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.cards[data-value="1"].flipped {
+    height: 95%;
+    width: 170px;
+    background-image: url("../img/ananas.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="2"].flipped {
+    height: 95%;
+    width: 170px;
+    background-image: url("../img/freres.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="3"].flipped {
+    height: 95%;
+    width: 170px;
+    background-image: url("../img/mugi.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
