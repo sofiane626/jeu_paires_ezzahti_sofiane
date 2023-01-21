@@ -1,56 +1,126 @@
-function startGame() {
+let difficultyLevel;
+let test;
+let valuesArray;
+let cardsArray;
+let remainingCards;
+
+let cardsEasy = document.querySelectorAll('.game-easy > .ligne > .cards');
+let cardsMedium = document.querySelectorAll('.game-medium > .ligne > .cards');
+let cardsHard = document.querySelectorAll('.game-hard > .ligne > .cards');
+
+const easyValuesArray = [1, 1, 2, 2, 3, 3];
+const mediumValuesArray = [4, 4, 5, 5, 6, 6, 7, 7];
+const hardValuesArray = [8, 8, 9, 9, 10, 10, 11, 11, 12, 12];
+
+let btn1 = document.getElementById('btn1');
+let btn2 = document.getElementById('btn2');
+let btn3 = document.getElementById('btn3');
+let btnClic = false;
+
+let easyButton = document.querySelector("#btn1");
+easyButton.addEventListener("click", function() {
+  changeButtonColor(easyButton);
+});
+
+let mediumButton = document.querySelector("#btn2");
+mediumButton.addEventListener("click", function() {
+  changeButtonColor(mediumButton);
+});
+
+let hardButton = document.querySelector("#btn3");
+hardButton.addEventListener("click", function() {
+  changeButtonColor(hardButton);
+});
+
+function changeButtonColor(selectedButton) {
+  let buttons = document.querySelectorAll(".difficulty-level");
+  for (let button of buttons) {
+    if (button === selectedButton) {
+      button.style.backgroundColor = "red";
+    } else {
+      button.style.backgroundColor = "white";
+    }
+  }
+}
+
+function getDifficulty(level) {
+    difficultyLevel = level;
+    console.log(difficultyLevel + ' laaaaaaaaa');
+
+if (difficultyLevel === 'easy') {
+    test = cardsEasy;
+    valuesArray = easyValuesArray;
+} else if (difficultyLevel === 'medium') {
+    test = cardsMedium;
+    valuesArray = mediumValuesArray;
+} else if (difficultyLevel === 'hard') { 
+    test = cardsHard;
+    valuesArray = hardValuesArray;
+    }
+    cardsArray = [...test];
+    remainingCards = cardsArray.length;
+    for (let i = 0; i < test.length; i++) {
+    test[i].addEventListener('click', flipCard);
+    }
+    console.log(test);
+    shuffleArray(valuesArray);
+    assignValuesToCards(valuesArray);
+}
+  
   let startPage = document.querySelector('.start-page');
-  let gamePage = document.querySelector('.game-page');
+  let gameEasy = document.querySelector('.game-easy');
+  let gameMedium = document.querySelector('.game-medium');
+  let gameHard = document.querySelector('.game-hard');
+  const video = document.getElementById("bg-video");
+
+function startGame() {
+    console.log('iciiiiiii');
+  video.play();
   
   startPage.style.opacity = 0;
   setTimeout(() => {
     startPage.style.display = 'none';
-    gamePage.style.display = 'flex';
-    gamePage.style.opacity = 1;
+    if (difficultyLevel === 'easy') {
+        gameEasy.style.display = 'flex';
+        gameEasy.style.opacity = 1;
+        console.log(difficultyLevel);
+    } else if (difficultyLevel === 'medium') {
+        gameMedium.style.display = 'flex';
+        gameMedium.style.opacity = 1;
+        console.log(difficultyLevel);
+    } else if (difficultyLevel === 'hard') {
+        gameHard.style.display = 'flex';
+        gameHard.style.opacity = 1;
+    }
   }, 500);
 }
 
 // --------------------------------------------------------------------------------------
-const card = document.querySelectorAll('.cards');
-const cardsArray = [...card];
-let valuesArray = [1,1,2,2,3,3];
-
 // shuffle the values array
-valuesArray = shuffleArray(valuesArray);
+function shuffleArray(array) {
+for (let i = array.length - 1; i > 0; i--) {
+let j = Math.floor(Math.random() * (i + 1));
+[array[i], array[j]] = [array[j], array[i]];
+}
+return array;
+}
 
 // assign values to cards
+function assignValuesToCards(mode) {
 for (let i = 0; i < cardsArray.length; i++) {
-    cardsArray[i].dataset.value = valuesArray[i];
+cardsArray[i].dataset.value = mode[i];
 }
-
-// shuffle function
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
 }
-
 // -------------------------------------------------------------------------------------------
 
 let cards = document.querySelectorAll('.cards');
-let remainingCards = cardsArray.length;
 
-function flipCard() {
-    this.classList.toggle('flipped');
-}
-
-for (var i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', flipCard);
-}
+console.log(test);
 
 let flippedCards = [];
 let lockBoard = false;
 
-for (var i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', flipCard);
-}
+
 
 function flipCard() {
     if (lockBoard) return;

@@ -6,13 +6,17 @@ body{
 .game-page {
     display: none;
     transition: all 1s;
-    height: 95vh !important;
-    background: url(../video/video-02-heritage-de-poudlard-fond-decran-animated-wallpaper.webm) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    animation: background-video 60s linear infinite;
+    height: 90vh !important;
+    z-index: 1;
+    padding-top: 25px;
+}
+
+body video {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .start-page{
@@ -22,16 +26,6 @@ body{
     height: 100vh !important;
     width: 100%;
     display: block;
-}
-
-@keyframes background-video {
-    from {
-        transform: scale(1.05);
-    }
-
-    to {
-        transform: scale(1);
-    }
 }
 
 .div-start{
@@ -60,8 +54,8 @@ body{
 }
 
 .div-card{
-    width: 60%;
-    height: 95vh;
+    width: 70%;
+    height: 98vh;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -84,19 +78,43 @@ body{
     justify-content: space-between;
 }
 
-.cards {
+.game-easy .cards{
     height: 95%;
     width: 170px;
     transition: transform 0.5s;
-    background-image: url("../img/dos.jpg");
+    background-image: url("../img/valo.jpg");
     background-size: cover;
     background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+}
+
+.game-medium .cards {
+    height: 95%;
+    width: 150px;
+    transition: transform 0.5s;
+    background-image: url("../img/valo.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+}
+
+.game-hard .cards {
+    height: 95%;
+    width: 130px;
+    transition: transform 0.5s;
+    background-image: url("../img/valo.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
 }
 
 .cards[data-value="1"].flipped {
     height: 95%;
     width: 170px;
-    background-image: url("../img/ananas.jpg");
+    background-image: url("../img/valo-1.jpg");
     background-size: cover;
     background-position: center;
     object-fit: cover;
@@ -106,7 +124,7 @@ body{
 .cards[data-value="2"].flipped {
     height: 95%;
     width: 170px;
-    background-image: url("../img/freres.jpg");
+    background-image: url("../img/valo-2.jpg");
     background-size: cover;
     background-position: center;
     object-fit: cover;
@@ -116,7 +134,97 @@ body{
 .cards[data-value="3"].flipped {
     height: 95%;
     width: 170px;
-    background-image: url("../img/mugi.jpg");
+    background-image: url("../img/valo-3.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="4"].flipped {
+    height: 95%;
+    width: 150px;
+    background-image: url("../img/valo-1.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="5"].flipped {
+    height: 95%;
+    width: 150px;
+    background-image: url("../img/valo-2.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="6"].flipped {
+    height: 95%;
+    width: 150px;
+    background-image: url("../img/valo-3.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="7"].flipped {
+    height: 95%;
+    width: 150px;
+    background-image: url("../img/valo-4.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="8"].flipped {
+    height: 95%;
+    width: 130px;
+    background-image: url("../img/valo-1.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="9"].flipped {
+    height: 95%;
+    width: 130px;
+    background-image: url("../img/valo-2.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="10"].flipped {
+    height: 95%;
+    width: 130px;
+    background-image: url("../img/valo-3.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="11"].flipped {
+    height: 95%;
+    width: 130px;
+    background-image: url("../img/valo-4.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.cards[data-value="12"].flipped {
+    height: 95%;
+    width: 130px;
+    background-image: url("../img/valo-5.jpg");
     background-size: cover;
     background-position: center;
     object-fit: cover;
