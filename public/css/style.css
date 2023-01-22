@@ -49,6 +49,7 @@ table {
   border-spacing: 50px 20px;
   text-align: center;
   border: 5px rgb(237, 52, 92) solid;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
 }
 
 body video {
@@ -114,15 +115,21 @@ h1 {
 }
 
 .div1 {
-  height: 10%;
+  height: 20%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+img {
+  width: 150px;
+  margin-bottom: 100px;
+  position: absolute;
+}
+
 .div2 {
-  height: 40%;
+  height: 30%;
   width: 100%;
   display: flex;
   align-items: baseline;
@@ -161,7 +168,7 @@ h1 {
   background-image: url("../img/valo.jpg");
   background-size: cover;
   background-position: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   border-radius: 5px;
   cursor: crosshair;
 }
@@ -173,7 +180,7 @@ h1 {
   background-image: url("../img/valo.jpg");
   background-size: cover;
   background-position: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   border-radius: 5px;
   cursor: crosshair;
 }
@@ -185,7 +192,7 @@ h1 {
   background-image: url("../img/valo.jpg");
   background-size: cover;
   background-position: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   border-radius: 5px;
   cursor: crosshair;
 }
