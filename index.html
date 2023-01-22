@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./public/img/icons8-valorant-100.png"
+    />
     <link rel="stylesheet" href="./public/css/style.css" />
-    <title>Document</title>
+    <title>Jeu Des Paires</title>
   </head>
   <body>
     <video
@@ -15,40 +20,50 @@
       type="video"
       src="./public/video/omen-valorant-livelywallpaper-hd.mp4"
     ></video>
+    <div id="chrono" style="display: none">00:00</div>
     <div class="start-page">
       <div class="div-start">
         <div class="div1">
-          <h1>Jeu des paires</h1>
+          <h1>JEU DES PAIRES</h1>
         </div>
         <div class="div2">
           <form>
             <label for="username">Entrez votre pseudo :</label>
             <input type="text" id="username" name="username" />
+            <br />
+            <br />
             <label for="difficulty-level"
-              >Choisir le niveau de difficulté :</label
+              >Choisir le niveau de difficulte :</label
             >
             <input
               type="button"
               value="Facile"
               id="btn1"
               class="difficulty-level"
-              onclick="getDifficulty('easy'), changeColorBtn(btn1)"
+              onclick="getDifficulty('easy')"
             />
             <input
               type="button"
               value="Moyen"
               id="btn2"
               class="difficulty-level"
-              onclick="getDifficulty('medium'), changeColorBtn(btn2)"
+              onclick="getDifficulty('medium')"
             />
             <input
               type="button"
               value="Difficile"
               id="btn3"
               class="difficulty-level"
-              onclick="getDifficulty('hard'), changeColorBtn(btn3)"
+              onclick="getDifficulty('hard')"
             />
-            <input type="button" value="Jouer" onclick="startGame()" />
+            <br />
+            <br />
+            <input
+              class="jouer"
+              type="button"
+              value="Jouer"
+              onclick="startGame()"
+            />
           </form>
         </div>
       </div>
@@ -96,6 +111,17 @@
         <div class="cards" data-value="11"></div>
         <div class="cards" data-value="12"></div>
         <div class="cards" data-value="12"></div>
+      </div>
+    </div>
+    <div class="game-score" style="display: none">
+      <div class="box">
+        <table id="scoreboard">
+          <tr>
+            <th>Pseudo :</th>
+            <th>Niveau :</th>
+            <th>Temps :</th>
+          </tr>
+        </table>
       </div>
     </div>
   </body>
