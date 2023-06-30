@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./public/img/icons8-valorant-100.png"
+    />
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <title>Jeu Des Paires</title>
+  </head>
+  <body>
+    <video
+      id="bg-video"
+      autoplay="autoplay"
+      loop="infinite"
+      type="video"
+      src="./public/video/omen-valorant-livelywallpaper-hd.mp4"
+    ></video>
+    <div id="chrono" style="display: none">00:00</div>
+    <div class="start-page">
+      <div class="div-start">
+        <div class="div1">
+          <h1>JEU DES PAIRES</h1>
+        </div>
+        <img src="./public/img/gif.gif" alt="" />
+        <div class="div2">
+          <form>
+            <label for="username">Entrez votre pseudo :</label>
+            <input type="text" id="username" name="username" />
+            <br />
+            <br />
+            <label for="difficulty-level"
+              >Choisir le niveau de difficulte :</label
+            >
+            <input
+              type="button"
+              value="Facile"
+              id="btn1"
+              class="difficulty-level"
+              onclick="getDifficulty('easy')"
+            />
+            <input
+              type="button"
+              value="Moyen"
+              id="btn2"
+              class="difficulty-level"
+              onclick="getDifficulty('medium')"
+            />
+            <input
+              type="button"
+              value="Difficile"
+              id="btn3"
+              class="difficulty-level"
+              onclick="getDifficulty('hard')"
+            />
+            <br />
+            <br />
+            <input
+              class="jouer"
+              type="button"
+              value="Jouer"
+              onclick="startGame()"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-page div-card game-easy" style="display: none">
+      <div class="ligne1 ligne">
+        <div class="cards" data-value="1"></div>
+        <div class="cards" data-value="1"></div>
+        <div class="cards" data-value="2"></div>
+      </div>
+      <div class="ligne2 ligne">
+        <div class="cards" data-value="2"></div>
+        <div class="cards" data-value="3"></div>
+        <div class="cards" data-value="3"></div>
+      </div>
+    </div>
+
+    <div class="game-page div-card game-medium" style="display: none">
+      <div class="ligne1 ligne">
+        <div class="cards" data-value="4"></div>
+        <div class="cards" data-value="4"></div>
+        <div class="cards" data-value="5"></div>
+        <div class="cards" data-value="5"></div>
+      </div>
+      <div class="ligne2 ligne">
+        <div class="cards" data-value="6"></div>
+        <div class="cards" data-value="6"></div>
+        <div class="cards" data-value="7"></div>
+        <div class="cards" data-value="7"></div>
+      </div>
+    </div>
+
+    <div class="game-page div-card game-hard" style="display: none">
+      <div class="ligne1 ligne">
+        <div class="cards" data-value="8"></div>
+        <div class="cards" data-value="8"></div>
+        <div class="cards" data-value="9"></div>
+        <div class="cards" data-value="9"></div>
+        <div class="cards" data-value="10"></div>
+      </div>
+      <div class="ligne2 ligne">
+        <div class="cards" data-value="10"></div>
+        <div class="cards" data-value="11"></div>
+        <div class="cards" data-value="11"></div>
+        <div class="cards" data-value="12"></div>
+        <div class="cards" data-value="12"></div>
+      </div>
+    </div>
+    <div class="game-score" style="display: none">
+      <div class="box">
+        <table id="scoreboard">
+          <tr>
+            <th>Pseudo :</th>
+            <th>Niveau :</th>
+            <th>Temps :</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+
+  <script src="./public/js/main.js"></script>
+</html>
